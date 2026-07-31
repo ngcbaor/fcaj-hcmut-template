@@ -1,12 +1,10 @@
 ---
-title: "Worklog"
+title: "Nhật ký công việc (Worklog)"
 date: 2026-06-15
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
-
-# Nhật ký công việc (Worklog)
 
 Tôi đã thực tập tại Công ty TNHH Amazon Web Services Việt Nam từ ngày 15/06/2026 đến 31/07/2026 với vị trí Workforce Bootcamp - First Cloud AI Journey. Trong suốt 7 tuần thực tập, tôi đã cân đối giữa việc học các công nghệ cốt lõi của AWS thông qua chương trình Cloud Journey và tham gia dự án nội bộ: awsplace. Trách nhiệm chính của tôi trong dự án awsplace từ Tuần 3 đến Tuần 6 là phát triển toàn bộ phần backend bằng ngôn ngữ Go.
 

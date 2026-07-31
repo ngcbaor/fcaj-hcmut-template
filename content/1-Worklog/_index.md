@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-# Worklog
-
 I interned at Amazon Web Services Viet Nam Company Limited from 15/06/2026 to 31/07/2026 in the position Workforce Bootcamp - First Cloud AI Journey. During this 7-week period, I balanced learning core AWS technologies through the Cloud Journey curriculum and contributing to an internal project: awsplace. My primary responsibility for awsplace from Week 3 to Week 6 was developing the entire Go backend service.
 
 | Week | Dates | Focus |
