@@ -1,31 +1,33 @@
 ---
-title: "Blog 1"
-date: 2024-01-01
+title: "Blog 1 - Real-time WebSockets on ECS Fargate"
+date: 2026-06-15
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# REAL-TIME CANVAS COMMUNICATION ON AWS USING WEBSOCKETS AND ECS FARGATE
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+This technical blog post shares architectural patterns and implementation details for building a high-throughput, low-latency WebSocket backend on AWS using Go and Amazon ECS Fargate.
 
-Key points to know:
+### Key Technical Highlights Covered in the Blog:
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+- **WebSocket Protocol Integration**: Explains the full-duplex communication model over HTTP/1.1 Upgrade requests, allowing continuous bidirectional messaging between browser clients and server nodes with minimal overhead.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+- **Thread-Safe Broadcast Hub Pattern**: Details the design of an in-memory client registry in Go using dedicated registration, unregister, and update broadcast channels owned by a single goroutine to prevent data races.
 
-...Image...
+- **Security & Origin Validation**: Implements strict cross-origin verification prior to connection upgrade, enforcing allowed origin domain lists to block unauthorized third-party site requests.
 
-...Link...
+- **Protocol Message Payload Optimization**: Standardizes a low-overhead JSON envelope format supporting efficient binary nibble data transmission for real-time canvas state updates.
 
-...Guide...
+- **Containerized Serverless Execution**: Describes deploying the Go WebSocket binary on Amazon ECS Fargate behind an Application Load Balancers (ALB) configured with sticky sessions and target tracking scaling rules.
+
+---
+
+### Facebook Community Post
+
+![WebSocket Architecture](/images/3-BlogPosted/websocket.png)
+
+- **Official Publication Link**: [AWS Study Group Facebook Post](https://www.facebook.com/share/p/1Uq2J8R8ah/)
+- **Target Audience**: Cloud Engineers, Backend Developers, Systems Architects
+- **Community Engagement**: Published on the AWS Study Group community platform for peer review and architectural feedback.

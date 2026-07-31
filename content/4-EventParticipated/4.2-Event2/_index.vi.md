@@ -1,125 +1,122 @@
 ---
-title: "Event 2"
-date: 2024-01-01
-weight: 1
+title: "Event 2 - FCAJ Swinburne Cloud Mastery 2026"
+date: 2026-07-04
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# BÁO CÁO TỔNG KẾT: FCAJ - SWINBURNE CLOUD MASTERY 2026
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+### Thông tin chung về sự kiện
 
-### Mục Đích Của Sự Kiện
+- **Tên sự kiện**: FCAJ - Swinburne Cloud Mastery 2026 (AWS: Enterprise Cloud Architectures & Industry Application)
+- **Thời gian**: 09:00 ngày 04 tháng 07 năm 2026
+- **Địa điểm**: Tầng 26, Tòa nhà Bitexco Financial Tower, số 02 đường Hải Triều, Phường Sài Gòn, Thành phố Hồ Chí Minh
+- **Hình thức tham dự**: Online
+- **Vai trò**: Người tham dự
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+---
 
-### Danh Sách Diễn Giả
+### Mục tiêu chính của sự kiện
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- Kết nối sinh viên Đại học Swinburne với các chuyên gia trong ngành thông qua chương trình AWS Study Tour.
+- Chia sẻ góc nhìn thực tế về thị trường việc làm ngành công nghệ, xu hướng đám mây và tác động của AI đến các vị trí khởi đầu sự nghiệp.
+- Thu hẹp khoảng cách giữa kiến thức học thuật và yêu cầu thực tế trong doanh nghiệp (đặc biệt trong lĩnh vực Data Engineering).
+- Định hướng phát triển kỹ năng mềm: Kỹ năng giao tiếp, xây dựng mối quan hệ và vượt qua nỗi sợ thất bại.
 
-### Nội Dung Nổi Bật
+---
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+### Diễn giả
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+- **Nguyễn Trần Minh Duy** – Industry Liaison Officer, Swinburne Vietnam
+- **Nguyễn Gia Hưng** – Head of Solution Architect, AWS Vietnam / Sáng lập First Cloud AI Journey
+- **Bành Cẩm Vĩnh** – Data Engineer, Renova Cloud / AWS Community Builder
+- **Như Trần** – Account Manager, AWS Vietnam
+- **Khang Nguyễn** – Solution Architect, Cloud Kinetics (Cựu sinh viên Swinburne)
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+---
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+### Nội dung nổi bật
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+#### Sự chuyển dịch của thị trường việc làm Cloud (Nguyễn Gia Hưng)
 
-#### Domain-Driven Design (DDD)
+- Yêu cầu cho các vị trí khởi điểm (Fresher/Intern) tăng cao do sự phổ biến của AI; ứng viên hiện nay được kỳ vọng nắm vững các kỹ năng nâng cao (như Kubernetes) ngay từ khi thực tập.
+- Công thức thành công: "Visibility + Capability + Consistency = Success." Không chỉ là kỹ năng chuyên môn, mà còn là việc xây dựng thương hiệu cá nhân, thực hiện dự án thực tế và học hỏi liên tục.
+- Chọn một lĩnh vực ngành nghề cụ thể (Ngân hàng, Bán lẻ, Truyền thông...) thay vì chỉ chọn một vị trí kỹ thuật đơn thuần để tạo sự khác biệt.
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+#### Data Engineering: Học thuật vs Thực tế doanh nghiệp (Bành Cẩm Vĩnh)
 
-#### Event-Driven Architecture
+- Đồ án trường học thường có dữ liệu sạch, yêu cầu rõ ràng và rủi ro thấp. Dữ liệu doanh nghiệp rất phức tạp, yêu cầu thay đổi liên tục và sự cố hệ thống ảnh hưởng trực tiếp đến doanh thu.
+- Tư duy Framework quan trọng hơn công cụ: Nắm vững cấu trúc "DNA" của một nền tảng dữ liệu (Ingestion, Processing, Storage, Governance, Analytics) thay vì chỉ học các công cụ rời rạc.
+- Thấu hiểu bài toán kinh doanh: Kỹ sư dữ liệu phải giao tiếp hiệu quả với các phòng ban (Marketing, Product) để hiểu rõ các chỉ số chuyên môn (như "Active User") thực sự có ý nghĩa gì đối với vận hành.
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+#### Tư duy sự nghiệp & Kỹ năng giao tiếp (Như Trần)
 
-#### Compute Evolution
+- Vượt qua "Nỗi sợ thất bại": Môi trường giáo dục thường tối ưu hóa cho sự đúng đắn làm sinh viên sợ mắc lỗi. Trong thực tế, thất bại là một phần của quá trình học hỏi và trưởng thành.
+- Nghệ thuật giao tiếp và tạo sự hiện diện: Vượt qua rào cản tâm lý khi tiếp xúc với cấp trên. Chủ động chào hỏi và trò chuyện với lãnh đạo có thể mở ra những cơ hội "Đại dương xanh" không xuất hiện trên các trang tuyển dụng.
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+#### Từ sinh viên đến kỹ sư chuyên nghiệp (Khang Nguyễn)
 
-#### Amazon Q Developer
+- AI là công cụ khuếch đại năng lực: Bạn có thể giao việc cho AI nhưng không thể giao sự hiểu biết của bản thân cho AI. Kiến thức nền tảng (Mạng, Bảo mật, Cơ sở dữ liệu) là yếu tố cốt lõi để kiểm chứng đầu ra của AI.
+- Làm vượt kỳ vọng (Over-deliver): Hãy làm nhiều hơn những gì yêu cầu đồ án đòi hỏi. Những nỗ lực và tính năng vượt trội đó chính là điểm sáng để bạn chinh phục nhà tuyển dụng khi phỏng vấn.
+- Thái độ quan trọng hơn trình độ (Attitude > Aptitude): Đối với nhân sự mới, thái độ tích cực và tinh thần sẵn sàng học hỏi được đánh giá cao hơn nhiều so với kinh nghiệm kỹ thuật ban đầu.
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+---
 
-### Những Gì Học Được
+### Bài học rút ra
 
-#### Tư Duy Thiết Kế
+#### Tư duy thiết kế (Design Mindset)
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+- **Tập trung vào nền tảng**: Nắm vững kiến trúc cốt lõi (mạng, pipeline dữ liệu) trước khi phụ thuộc hoàn toàn vào các công cụ AI.
+- **Giải pháp dựa trên bài toán kinh doanh**: Luôn căn chỉnh giải pháp kỹ thuật theo mục tiêu doanh nghiệp (ví dụ: không dựng pipeline dữ liệu real-time nếu xử lý theo đợt Batch Processing đã giải quyết tốt và tiết kiệm chi phí).
 
-#### Kiến Trúc Kỹ Thuật
+#### Kiến trúc kỹ thuật (Technical Architecture)
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+- **Một framework cho mọi nền tảng**: Hiểu rõ các thành phần cốt lõi của hệ thống. Dịch vụ đám mây cụ thể (AWS, mã nguồn mở...) chỉ là công cụ áp dụng vào framework đó.
+- **Ràng buộc thực tế**: Khi thiết kế hệ thống, phải tính đến khả năng mở rộng, chi phí, bảo mật và khả năng tích hợp với các nguồn dữ liệu cũ (những yếu tố thường bị bỏ qua trong đồ án trường học).
 
-#### Chiến Lược Hiện Đại Hóa
+#### Chiến lược hiện đại hóa & Sự nghiệp
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+- **Đầu tư cho bản thân**: Nhà tuyển dụng tìm kiếm những người có tinh thần học hỏi suốt đời. Liên tục tích lũy chứng chỉ, xây dựng dự án cá nhân và cập nhật tri thức mới.
+- **Tìm kiếm cơ hội Đại dương xanh**: Xây dựng mối quan hệ và tìm kiếm cơ hội thông qua sự đóng góp cho cộng đồng thay vì chỉ nộp đơn vào các vị trí tuyển dụng công khai có tính cạnh tranh cao.
 
-### Ứng Dụng Vào Công Việc
+---
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+### Áp dụng vào công việc / Học tập
 
-### Trải nghiệm trong event
+- **Thay đổi tư duy dùng AI**: Sử dụng AI để thử thách tư duy và học nhanh hơn, không chỉ dùng để chép lời giải bài tập.
+- **Rèn luyện giao tiếp chủ động**: Trao đổi chặt chẽ với các nhóm chuyên môn để hiểu đúng yêu cầu và thiết lập quy trình rõ ràng khi có thay đổi.
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+---
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+### Trải nghiệm sự kiện
 
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
+Tham dự buổi workshop "FCAJ - Swinburne Cloud Mastery 2026" mang lại giá trị vô cùng to lớn, cung cấp góc nhìn thực tế về hành trình chuyển tiếp từ môi trường đại học sang ngành công nghệ. Các trải nghiệm chính bao gồm:
 
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
+#### Học hỏi từ các diễn giả giàu kinh nghiệm
 
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+- Tiếp thu những chia sẻ sâu sắc từ các lãnh đạo AWS và kỹ sư lâu năm về sự thay đổi kỳ vọng của tuyển dụng trong kỷ nguyên AI.
+- Nhận thức rõ sự khác biệt lớn giữa đồ án sinh viên và nền tảng dữ liệu quy mô doanh nghiệp.
 
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+#### Tiếp cận định hướng nghề nghiệp thực tế
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+- Học hỏi các khung tư duy thực tiễn cho Data Engineering tập trung vào khái niệm cốt lõi thay vì các xu hướng công cụ ngắn hạn.
+- Khám phá cách ứng dụng công cụ AI (như Amazon Q / Claude) để đánh giá kiến trúc theo chuẩn AWS Well-Architected Framework.
+
+#### Giao lưu và thảo luận
+
+- Hiểu được tầm quan trọng của việc xây dựng thương hiệu cá nhân và tham gia cộng đồng (như First Cloud AI Journey) để tiếp cận các cơ hội ẩn.
+- Thảo luận về các thách thức thực tế trong giao tiếp liên phòng ban và cách quản lý kỳ vọng của các bên liên quan.
+
+#### Bài học ghi nhận
+
+- Kỹ năng kỹ thuật đơn thuần không còn đủ; kiến thức ngành và sự thấu hiểu bài toán kinh doanh là yếu tố khác biệt quyết định trong kỷ nguyên AI.
+- Cần dũng cảm vượt qua nỗi sợ thất bại. Coi môi trường đại học là nơi trải nghiệm và học hỏi từ các sai sót trước khi bước vào thị trường lao động.
+- Sự kiên trì trong việc xây dựng dự án cá nhân và duy trì sự hiện diện chuyên môn là chìa khóa để vượt qua các hệ thống lọc CV bằng AI hiện nay.
+
+---
+
+### Hình ảnh tham gia sự kiện
+
+![FCAJ Swinburne Cloud Mastery 2026](/images/4-EventParticipated/4.2-Event2/286910d0-b695-4ada-9544-ce3863722735.jpg)

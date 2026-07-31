@@ -1,57 +1,29 @@
 ---
 title: "Week 4 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-07-06
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 4 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+- Master AWS Container Services including Docker, Amazon Elastic Container Registry (ECR), Amazon ECS, and AWS Fargate.
+- Containerize the awsplace Go backend service using multi-stage Docker builds.
+- Deploy the containerized Go WebSocket backend to Amazon ECS Fargate behind an Application Load Balancer.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 1 | - Study Containerization fundamentals with Docker<br>- Project awsplace: Create go-ecs/Dockerfile implementing multi-stage build pattern using golang:1.22-alpine as builder stage to compile static Go binary and gcr.io/distroless/static-debian12 as minimal runtime container image (final size under 20MB) | 06/07/2026 | 06/07/2026 | https://000015.awsstudygroup.com |
+| 2 | - Study Container Orchestration with Amazon ECS and Amazon ECR<br>- Project awsplace: Create Amazon ECR private repository, authenticate local Docker CLI with ECR via AWS CLI, build and tag Go backend image awsplace-backend:v1.0.0, and push image to ECR repository | 07/07/2026 | 07/07/2026 | https://000016.awsstudygroup.com |
+| 3 | - Study Amazon ECS Task Definitions and AWS Fargate integration<br>- Project awsplace: Create ECS Task Definition specifying Fargate launch type, 0.25 vCPU, 512MB memory, container port 8980, environment variables (DISCORD_CLIENT_ID, CANVAS_WIDTH, CANVAS_HEIGHT), and awslogs CloudWatch log driver | 08/07/2026 | 08/07/2026 | https://000067.awsstudygroup.com |
+| 4 | - Project awsplace: Provision Application Load Balancer (ALB) with HTTP listener on port 80 and target group targeting ECS tasks on port 8980<br>- Create ECS Fargate Service with desired count of 2 tasks spanning multiple Availability Zones, verify WebSocket handshake connection routing through ALB | 09/07/2026 | 09/07/2026 | https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ |
+| 5 | - Study Getting Started with Amazon Elastic Kubernetes Service (EKS)<br>- Explore EKS cluster architecture, control plane management, worker node groups, and evaluate architectural trade-offs between ECS Fargate and EKS for Go microservices | 10/07/2026 | 10/07/2026 | https://000126.awsstudygroup.com |
 
 ### Week 4 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Acquired practical skills in containerizing Go applications and deploying them to AWS container services.
+- Successfully packaged the awsplace Go backend into an optimized distroless container image.
+- Deployed the Go WebSocket backend to AWS ECS Fargate with multi-AZ high availability behind an Application Load Balancer.

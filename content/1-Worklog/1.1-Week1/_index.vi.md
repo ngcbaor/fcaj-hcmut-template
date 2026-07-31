@@ -1,59 +1,29 @@
 ---
 title: "Worklog Tuần 1"
-date: 2024-01-01
+date: 2026-06-15
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 1:
 
-### Mục tiêu tuần 1:
+- Hoàn thành quá trình onboarding, nghiên cứu quy định thực tập và thiết lập môi trường làm việc trên AWS.
+- Khám phá các dịch vụ AWS cốt lõi bao gồm IAM, VPC, EC2, S3 và RDS thông qua các bài thực hành thực tế.
+- Hiểu rõ nguyên lý bảo mật hạ tầng, phân chia subnet mạng và khởi tạo dịch vụ điện toán.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc triển khai trong tuần này:
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Đọc quy định thực tập và hướng dẫn sử dụng mẫu báo cáo<br>- Khởi tạo tài khoản AWS root, chọn region mặc định ap-southeast-1 (Singapore), cấu hình cảnh báo ngưỡng ngân sách 10 USD/tháng trên AWS Budgets | 15/06/2026 | 15/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://000001.awsstudygroup.com |
+| 3 | - Học nguyên lý Quản lý truy cập AWS Identity and Access Management (IAM)<br>- Tạo IAM User Group tên Developers, gán policy quản lý AWS PowerUserAccess, tạo người dùng IAM làm việc, kích hoạt xác thực đa yếu tố (MFA) và kiểm tra danh tính qua lệnh aws sts get-caller-identity | 16/06/2026 | 16/06/2026 | https://000002.awsstudygroup.com |
+| 4 | - Học Kiến thức mạng cơ bản Amazon Virtual Private Cloud (VPC)<br>- Khởi tạo VPC tùy chỉnh với dải IP 10.0.0.0/16, tạo 2 Public Subnet (10.0.1.0/24, 10.0.2.0/24) và 2 Private Subnet (10.0.10.0/24, 10.0.20.0/24), gắn Internet Gateway, cấu hình Route Table và Subnet Association | 17/06/2026 | 17/06/2026 | https://000003.awsstudygroup.com |
+| 5 | - Học Điện toán cơ bản với Amazon Elastic Compute Cloud (EC2)<br>- Tạo máy chủ EC2 t3.micro chạy Amazon Linux 2023 trong public subnet, cấu hình Security Group mở cổng SSH (22) và HTTP (80), kết nối SSH qua Key Pair, cài đặt web server Nginx | 18/06/2026 | 18/06/2026 | https://000004.awsstudygroup.com |
+| 6 | - Học Lưu trữ web tĩnh với Amazon S3 và Cơ sở dữ liệu với Amazon RDS<br>- Tạo S3 bucket, cấu hình Bucket Policy cho phép đọc công khai, tải tệp index.html và bật tính năng Static Website Hosting<br>- Khởi tạo cơ sở dữ liệu Amazon RDS MySQL db.t3.micro trong private subnets với DB Subnet Group và Security Group cho phép kết nối cổng 3306 từ EC2 | 19/06/2026 | 19/06/2026 | https://000057.awsstudygroup.com<br>https://000005.awsstudygroup.com |
 
+### Kết quả đạt được Tuần 1:
 
-### Kết quả đạt được tuần 1:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+- Thiết lập thành công môi trường hạ tầng đám mây cô lập tại AWS region ap-southeast-1.
+- Thành thạo thao tác xây dựng mạng VPC tùy chỉnh, chính sách bảo mật IAM, máy chủ EC2, lưu trữ S3 và cơ sở dữ liệu RDS.
+- Hoàn thành trọn vẹn 5 bài lab thực hành trong phần Explore AWS Services mà không gặp lỗi cấu hình.

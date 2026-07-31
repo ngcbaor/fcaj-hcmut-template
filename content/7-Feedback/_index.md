@@ -1,47 +1,50 @@
 ---
 title: "Sharing and Feedback"
-date: 2024-01-01
+date: 2026-06-15
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
-
-> Here, you can freely share your personal opinions about your experience participating in the First Cloud AI Journey program. This will help the FCAJ team improve any shortcomings based on the following aspects:
+Participating in the First Cloud AI Journey (FCAJ) program over the past 7 weeks has been a key turning point in my transition from a computer science student to a cloud engineer. Below are my honest thoughts, constructive feedback, and reflections on the overall internship experience.
 
 ### Overall Evaluation
 
-**1. Working Environment**  
-The working environment is very friendly and open. FCAJ members are always willing to help whenever I encounter difficulties, even outside working hours. The workspace is tidy and comfortable, helping me focus better. However, I think it would be nice to have more social gatherings or team bonding activities to strengthen relationships.
+#### 1. Working & Learning Environment
+The program environment is supportive, structured, and conducive to learning. Members of the FCAJ community and fellow interns are open to sharing knowledge and helping out whenever someone faces technical blockers. The mix of structured curriculum tasks and real-world project development (such as building the awsplace backend) created a good balance between guided learning and hands-on execution.
 
-**2. Support from Mentor / Team Admin**  
-The mentor provides very detailed guidance, explains clearly when I don’t understand, and always encourages me to ask questions. The admin team supports administrative tasks, provides necessary documents, and creates favorable conditions for me to work effectively. I especially appreciate that the mentor allows me to try and solve problems myself instead of just giving the answer.
+#### 2. Mentor & Admin Support
+The guidance provided by the mentors was one of the highlights of the program. Rather than simply giving direct answers when I encountered infrastructure or coding bugs, mentors encouraged me to read official AWS documentation, trace error logs, and analyze root causes independently. This approach helped me build a self-reliant problem-solving mindset. The administrative team also ensured smooth coordination for community events and workshop activities.
 
-**3. Relevance of Work to Academic Major**  
-The tasks I was assigned align well with the knowledge I learned at university, while also introducing me to new areas I had never encountered before. This allowed me to both strengthen my foundational knowledge and gain practical skills.
+#### 3. Alignment with Academic Major
+The tasks assigned directly aligned with my software engineering background while extending my knowledge into modern cloud architecture. I was able to apply Go programming fundamentals and database concepts to real-world AWS services like ECS Fargate, DynamoDB, EFS, and CDK. It bridged the gap between academic theory and production-grade cloud deployment.
 
-**4. Learning & Skill Development Opportunities**  
-During the internship, I learned many new skills such as using project management tools, teamwork skills, and professional communication in a corporate environment. The mentor also shared valuable real-world experiences that helped me better plan my career path.
+#### 4. Learning & Skill Development Opportunities
+The 7-week journey pushed my technical boundaries significantly. Beyond mastering container orchestration and IaC deployment, I gained valuable experience in technical writing through published blog posts and broadened my perspective on enterprise cloud strategy, AI agents, and DevSecOps by attending the 4 community events.
 
-**5. Company Culture & Team Spirit**  
-The company culture is very positive: everyone respects each other, works seriously but still keeps things enjoyable. When there are urgent projects, everyone works together and supports one another regardless of their position. This made me feel like a real part of the team, even as an intern.
+#### 5. Community Culture & Team Collaboration
+The culture within the FCAJ study group is collaborative and encouraging. Working alongside peers who are equally passionate about cloud technology created a healthy environment for learning. Everyone was willing to review code, test API endpoints, and exchange ideas during project milestones.
 
-**6. Internship Policies / Benefits**  
-The company provides an internship allowance and offers flexible working hours when needed. In addition, having the opportunity to join internal training sessions is a big plus.
+#### 6. Program Structure & Benefits
+The structured roadmap from foundational AWS networking to complex container microservices provided a clear learning trajectory. Having access to AWS resources and community events gave us practical exposure that is difficult to replicate in a standard university course.
 
 ---
 
-### Additional Questions
-- What did you find **most satisfying** during your internship?  
-- What do you think the company **should improve** for future interns?  
-- If recommending to a friend, would you **suggest they intern here**? Why or why not?  
+### Key Questions & Reflections
+
+#### What did you find most satisfying during your internship?
+The most satisfying experience was seeing the entire Go backend for awsplace successfully deployed and running live on AWS ECS Fargate, integrated with DynamoDB and CDK pipelines. Taking a project from raw code to a deployed containerized microservice gave me a strong sense of achievement.
+
+#### What do you think the program should improve for future cohorts?
+- **More structured code review sessions**: Having regular, scheduled code review slots with mentors would help interns identify bad practices and optimize performance earlier in the project lifecycle.
+- **Hands-on workshop prep**: Providing short pre-workshop reading materials or architectural diagrams a day in advance would help interns digest complex workshop topics more effectively during live sessions.
+
+#### If recommending to a friend, would you suggest they join this program?
+Yes, absolutely. For any student or fresh graduate looking to build real-world cloud engineering skills, FCAJ offers a practical, challenging, and supportive environment that accelerates learning far beyond traditional coursework.
 
 ---
 
 ### Suggestions & Expectations
-- Do you have any suggestions to improve the internship experience?  
-- Would you like to continue this program in the future?  
-- Any other comments (free sharing):
+
+- **Post-internship community engagement**: I hope to stay connected with the FCAJ community as an alumnus, participating in future tech meetups and sharing experiences with incoming cohorts.
+- **Advanced topic tracks**: Adding optional deep-dive modules on advanced topics like multi-region deployment or serverless performance tuning for interested participants in future iterations.

@@ -1,31 +1,33 @@
 ---
-title: "Blog 1"
-date: 2024-01-01
+title: "Blog 1 - WebSockets Real-time trên ECS Fargate"
+date: 2026-06-15
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# XÂY DỰNG HỆ THỐNG BẢNG VẼ REAL-TIME TRÊN AWS VỚI WEBSOCKETS VÀ ECS FARGATE
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Bài viết kỹ thuật chia sẻ mô hình kiến trúc và kinh nghiệm thực tế trong việc phát triển hệ thống backend WebSocket độ trễ thấp, hiệu năng cao trên AWS sử dụng ngôn ngữ Go và dịch vụ Amazon ECS Fargate.
 
-Các điểm chính cần nắm:
+### Các điểm kỹ thuật nổi bật trong bài viết:
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+- **Tích hợp giao thức WebSocket**: Giải thích mô hình giao tiếp hai chiều full-duplex thông qua yêu cầu HTTP/1.1 Upgrade, cho phép truyền nhận dữ liệu liên tục giữa trình duyệt và server với overhead cực nhỏ.
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+- **Mô hình Broadcast Hub an toàn bộ nhớ**: Chi tiết cách thiết kế bộ đăng ký kết nối client bằng Go, sử dụng các channel riêng biệt cho việc đăng ký, hủy đăng ký và phát tin (broadcast) để tránh xung đột bộ nhớ (data race).
 
-...Hình ảnh...
+- **Kiểm tra bảo mật Origin Validation**: Triển khai cơ chế xác thực nguồn gốc kết nối trước khi nâng cấp giao thức, áp dụng danh sách cấu hình tên miền cho phép để ngăn chặn các truy cập trái phép từ trang web bên thứ ba.
 
-...Link...
+- **Tối ưu hóa định dạng gói tin Protocol**: Chuẩn hóa cấu trúc envelope JSON mỏng giúp truyền tải dữ liệu nén 4bpp nibble mượt mà cho các sự kiện cập nhật điểm ảnh thời gian thực.
 
-...Hướng dẫn...
+- **Triển khai Serverless Container trên AWS**: Hướng dẫn đóng gói ứng dụng Go và chạy trên Amazon ECS Fargate đứng sau Application Load Balancer (ALB) hỗ trợ auto scaling tự động theo lượng truy cập.
+
+---
+
+### Bài đăng trên Cộng đồng Facebook
+
+![Kiến trúc WebSocket](/images/3-BlogPosted/websocket.png)
+
+- **Link bài viết chính thức**: [AWS Study Group Facebook Post](https://www.facebook.com/share/p/1Uq2J8R8ah/)
+- **Đối tượng độc giả**: Cloud Engineer, Backend Developer, Solution Architect
+- **Kênh chia sẻ**: Đã đăng tải và thảo luận trực tiếp tại cộng đồng AWS Study Group.

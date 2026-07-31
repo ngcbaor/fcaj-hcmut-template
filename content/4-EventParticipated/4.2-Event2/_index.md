@@ -1,126 +1,122 @@
 ---
-title: "Event 2"
-date: 2024-01-01
-weight: 1
+title: "Event 2 - FCAJ Swinburne Cloud Mastery 2026"
+date: 2026-07-04
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+# SUMMARY REPORT: FCAJ - SWINBURNE CLOUD MASTERY 2026
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+### Event Overview
+
+- **Event Name**: FCAJ - Swinburne Cloud Mastery 2026 (AWS Enterprise Cloud Architectures & Industry Application)
+- **Date & Time**: 09:00, July 4, 2026
+- **Location**: 26th Floor, Bitexco Financial Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City
+- **Attendance Mode**: Online
+- **Role**: Attendee
+
+---
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- Connect Swinburne University students with industry professionals through an AWS Study Tour.
+- Share insights into the current tech job market, cloud trends, and the impact of AI on early-career roles.
+- Bridge the gap between academic learning and real-world enterprise requirements (especially in data engineering).
+- Provide career development advice on communication, relationship-building, and overcoming the fear of failure.
+
+---
 
 ### Speakers
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+- **Nguyễn Trần Minh Duy** – Industry Liaison Officer, Swinburne Vietnam
+- **Nguyễn Gia Hưng** – Head of Solution Architect, AWS Vietnam / Founder of First Cloud AI Journey
+- **Bành Cẩm Vĩnh** – Data Engineer, Renova Cloud / AWS Community Builder
+- **Như Trần** – Account Manager, AWS Vietnam
+- **Khang Nguyễn** – Solution Architect, Cloud Kinetics (Swinburne Alumni)
+
+---
 
 ### Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+#### The Evolving Cloud Job Market (Nguyễn Gia Hưng)
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+- The bar for entry-level talent has risen significantly due to AI; candidates are now expected to have advanced skills (like Kubernetes) even for internships.
+- "Visibility + Capability + Consistency = Success." It is not just about technical skills, but building a public profile, side projects, and continuous learning.
+- Choose a specific industry domain (Banking, Retail, Media, etc.) rather than just a technical role to stand out.
 
-#### Transitioning to modern application architecture – Microservices
+#### Data Engineering: Academic vs. Real-world (Bành Cẩm Vĩnh)
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+- School projects usually have clean data, clear requirements, and low stakes. Enterprise data is messy, requirements change rapidly, and system failures directly impact business revenue.
+- Framework over Tools: Master the core "DNA" of a data platform (Ingestion, Processing, Storage, Governance, Analytics) instead of just learning disconnected tools.
+- Business alignment: A data engineer must communicate effectively with different departments (marketing, product) to understand what metrics (like "active user") actually mean to their specific operations.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+#### Career Mindset & Communication (Như Trần)
 
-#### Domain-Driven Design (DDD)
+- Overcoming the "Fear of Failure": The education system optimizes for correctness, making students fear mistakes. In the real world, failure is part of the learning curve.
+- The art of "Small Talk" and visibility: Overcome the fear of authority figures (bosses/managers). Taking the initiative to greet and talk to leaders can open unexpected "Blue Ocean" opportunities that are not posted on job boards.
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+#### From Student to Industry Professional (Khang Nguyễn)
 
-#### Event-Driven Architecture
+- AI as an amplifier: You can outsource your tasks to AI, but you cannot outsource your understanding. Foundational knowledge (networking, security, databases) is crucial to validate AI outputs.
+- Over-deliver on projects: Do more than what the grading rubric requires. The extra effort and features are what you showcase to employers during interviews to stand out.
+- Attitude > Aptitude: For freshers, attitude and willingness to learn are evaluated much higher than raw technical experience.
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
-
-#### Compute Evolution
-
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
-
-#### Amazon Q Developer
-
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+---
 
 ### Key Takeaways
 
 #### Design Mindset
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+- **Foundational focus**: Master the underlying architecture (e.g., networking, data pipelines) before relying blindly on AI tools.
+- **Business-driven tech**: Always align technical solutions with business outcomes (e.g., do not build a real-time data pipeline if batch processing solves the business need efficiently and cheaply).
 
 #### Technical Architecture
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+- **One framework for every platform**: Understand the core components of a system. The specific cloud provider (AWS, open-source, etc.) is just the tool applied to the framework.
+- **Real-world constraints**: When designing systems, factor in scalability, cost, security, and integration with legacy or messy data sources (things often skipped in school projects).
 
-#### Modernization Strategy
+#### Modernization & Career Strategy
 
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+- **"Invest in yourself"**: Employers look for lifelong learners. Keep acquiring certifications, building public side projects, and updating your knowledge base.
+- **Seek "Blue Ocean" opportunities**: Build relationships and find niche opportunities through community involvement rather than just applying to highly competitive, public job postings.
 
-### Applying to Work
+---
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+### Applying to Work/Study
+
+- **Rethink AI usage**: Use AI to challenge your thinking and learn faster, not just to generate homework answers.
+- **Practice proactive communication**: Align with cross-functional teams to truly understand their requirements and establish clear protocols for changing requests.
+
+---
 
 ### Event Experience
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+Attending the "AWS: Enterprise Cloud Architectures and Industry Application" workshop was extremely valuable, offering a realistic perspective on transitioning from university to the tech industry. Key experiences included:
 
 #### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
 
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
+- Gained profound insights from AWS leaders and experienced engineers on how AI is reshaping entry-level expectations.
+- Understood the vast difference between school projects and enterprise-grade data platforms.
 
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
+#### Hands-on career exposure
+
+- Learned practical frameworks for data engineering that focus on core concepts rather than fleeting tool trends.
+- Discovered how AI tools (like Amazon Q / Claude) should be used to validate architectures against best practices like the AWS Well-Architected Framework.
 
 #### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
+
+- Explored the importance of "visibility" and community engagement (like the First Cloud AI Journey) to uncover hidden job opportunities.
+- Discussed real-world challenges of cross-functional communication and managing stakeholder expectations without taking friction personally.
 
 #### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
 
-#### Some event photos
-*Add your event photos here*  
+- Technical skills alone are no longer enough; domain knowledge and business alignment are critical differentiators in the AI era.
+- The fear of failure must be unlearned. Treat school as a place where you "pay to make mistakes" and learn from them before entering the workforce.
+- Consistency in building personal projects and maintaining a public profile is key to passing automated AI CV screening systems today.
 
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+---
+
+### Event Photo
+
+![FCAJ Swinburne Cloud Mastery 2026](/images/4-EventParticipated/4.2-Event2/286910d0-b695-4ada-9544-ce3863722735.jpg)
