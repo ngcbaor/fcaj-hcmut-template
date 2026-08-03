@@ -11,4 +11,3 @@ pre: " <b> 8. </b> "
 Dưới đây là các liên kết chính thức và tài liệu tham khảo liên quan đến dự án **awsplace** trong quá trình thực tập:
 
 - **Trang web sản phẩm (Live Product):** [https://place.namanhishere.com/](https://place.namanhishere.com/) — Hệ thống **awsplace** đang chạy thực tế trên hạ tầng AWS.
-- **GitHub Repository:** [https://github.com/ngcbaor/fcaj-workshop-report](https://github.com/ngcbaor/fcaj-workshop-report) — Mã nguồn báo cáo thực tập và tài liệu hướng dẫn workshop.
