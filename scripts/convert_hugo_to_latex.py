@@ -592,12 +592,84 @@ def preprocess_markdown(content, meta=None):
     )
     content = re.sub(r"\s*\{\{%\s*/notice\s*%\}\}", r"\n:::\n", content)
 
-    content = content.replace("&emsp;", r"\qquad ")
-    content = content.replace("\u2705", r"\checkmark")
-    content = content.replace("\u2610", r"$\square$")
-    content = re.sub(r"⚠\ufe0f?", "!", content)
-    content = content.replace("\u26a0", "!")
-    content = content.replace("\u2192", r"$\rightarrow$")
+    unicode_map = {
+        # Box drawing characters
+        "─": "-",
+        "│": "|",
+        "┌": "+",
+        "┐": "+",
+        "└": "+",
+        "┘": "+",
+        "├": "+",
+        "┤": "+",
+        "┬": "+",
+        "┴": "+",
+        "┼": "+",
+        "►": ">",
+        "▼": "v",
+        "▲": "^",
+        "◄": "<",
+        "═": "=",
+        "║": "|",
+        "╔": "+",
+        "╗": "+",
+        "╚": "+",
+        "╝": "+",
+        "╠": "+",
+        "╣": "+",
+        "╦": "+",
+        "╩": "+",
+        "╬": "+",
+        # Arrows
+        "→": " $\\rightarrow$ ",
+        "←": " $\\leftarrow$ ",
+        "↔": " $\\leftrightarrow$ ",
+        "⇒": " $\\Rightarrow$ ",
+        "⇐": " $\\Leftarrow$ ",
+        # Emojis & Symbols
+        "📸": "",
+        "✅": " [x] ",
+        "❌": " [!] ",
+        "☐": " [ ] ",
+        "☑": " [x] ",
+        "⚠": "!",
+        "⚠️": "!",
+        "⭐": "*",
+        "★": "*",
+        "☆": "*",
+        "💡": "",
+        "🚀": "",
+        "🔒": "",
+        "🔑": "",
+        "📦": "",
+        "📝": "",
+        "🎯": "",
+        "🔗": "",
+        "📌": "",
+        "🔍": "",
+        "🎉": "",
+        # Spaces & Typography
+        "&emsp;": r"\qquad ",
+        "&ensp;": r"\quad ",
+        "&nbsp;": " ",
+        "\u200b": "",
+        "\ufeff": "",
+        "\u00a0": " ",
+        "“": '"',
+        "”": '"',
+        "‘": "'",
+        "’": "'",
+        "–": "--",
+        "—": "---",
+        "…": "...",
+        # Accidental CJK
+        "触发": "kích hoạt",
+        "发": "",
+        "触": "",
+    }
+
+    for k, v in unicode_map.items():
+        content = content.replace(k, v)
 
     return content
 # ---------------------------------------------------------------------------

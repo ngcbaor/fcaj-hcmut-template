@@ -115,3 +115,12 @@ jobs:
           removeArtifacts: true
           makeLatest: true
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload LaTeX Logs on Failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-build-logs
+          path: |
+            report/*.log
+            report/generated/
