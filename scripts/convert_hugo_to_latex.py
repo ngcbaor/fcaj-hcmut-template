@@ -261,11 +261,14 @@ def latex_escape_cell(text):
     # Remove markdown links <https://...> -> https://...
     text = re.sub(r"<(https?://[^>]+)>", r"\1", text)
 
-    # Markdown bold
-    text = re.sub(r"\*\*(.+?)\*\*", r"\\textbf{\1}", text)
+    bolds = []
+    def bold_repl(m):
+        bolds.append(m.group(1))
+        return f"__LATEX_BOLD_{len(bolds)-1}__"
+
+    text = re.sub(r"\*\*(.+?)\*\*", bold_repl, text)
 
     replacements = {
-        "\\": r"\textbackslash{}",
         "&": r"\&",
         "%": r"\%",
         "$": r"\$",
@@ -277,15 +280,14 @@ def latex_escape_cell(text):
         "^": r"\textasciicircum{}",
     }
 
-    # Escape only outside simple LaTeX commands introduced above.
-    # Simpler and okay for report use:
     for k, v in replacements.items():
-        if k == "\\":
-            continue
         text = text.replace(k, v)
 
-    # Restore \textbf after escaping braces.
-    text = text.replace(r"\textbf\{", r"\textbf{").replace(r"\}", "}")
+    for i, b in enumerate(bolds):
+        escaped_b = b
+        for k, v in replacements.items():
+            escaped_b = escaped_b.replace(k, v)
+        text = text.replace(f"__LATEX_BOLD_{i}__", rf"\textbf{{{escaped_b}}}")
 
     return text
 
@@ -657,6 +659,9 @@ def neutralize_body_headings(latex):
 def compact_longtables(latex):
     """Make Pandoc longtables more compact without modifying column specs."""
     if r"\begin{longtable}" not in latex:
+        return latex
+
+    if r"\tabcolsep" in latex:
         return latex
 
     latex = latex.replace(
