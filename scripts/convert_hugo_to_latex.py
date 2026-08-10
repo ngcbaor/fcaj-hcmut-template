@@ -3,6 +3,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import urllib.parse
 import yaml
 
 CONTENT_DIR = "content"
@@ -572,8 +573,15 @@ def preprocess_markdown(content, meta=None):
         if keep_columns:
             content = filter_markdown_tables(content, keep_columns)
 
-    content = re.sub(r"!\[([^\]]*)\]\(/static/images/", r"![\1](", content)
-    content = re.sub(r"!\[([^\]]*)\]\(/images/",      r"![\1](", content)
+    def fix_image_link(match):
+        alt = match.group(1)
+        src = match.group(2)
+        src = urllib.parse.unquote(src)
+        src = re.sub(r"^/static/images/", "", src)
+        src = re.sub(r"^/images/", "", src)
+        return f"![{alt}]({src})"
+
+    content = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", fix_image_link, content)
 
     content = re.sub(
         r"\{\{%\s*notice\s+(\w+)\s*%\}\}\s*",
@@ -853,6 +861,7 @@ def build_include_file(lang, pages, containers):
         lines.append(r"\newpage")
         lines.append("")
 
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
     out_path = os.path.join(OUTPUT_DIR, f"content_body_{lang}.tex")
 
     with open(out_path, "w", encoding="utf-8") as f:

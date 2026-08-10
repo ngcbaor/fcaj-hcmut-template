@@ -1,8 +1,8 @@
 \documentclass[a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
-\usepackage{mathptmx}[ptm]
-\usepackage{a4wide,amssymb,epsfig,latexsym,array,hhline,fancyhdr}
+\usepackage{mathptmx}
+\usepackage{a4wide,amssymb,epsfig,latexsym,array,hhline,fancyhdr,calc}
 \usepackage[normalem]{ulem}
 
 \usepackage[makeroom]{cancel}
@@ -43,7 +43,7 @@
 
 \IfFileExists{grffile.sty}{\usepackage{grffile}}{}
 
-\graphicspath{{../static/images/}}
+\graphicspath{{./}{../static/images/}}
 
 \def\thesislayout{
 	\geometry{

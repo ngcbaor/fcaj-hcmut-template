@@ -51,7 +51,9 @@ jobs:
             texlive-latex-recommended \
             texlive-latex-extra \
             texlive-fonts-recommended \
+            texlive-fonts-extra \
             texlive-lang-other \
+            texlive-lang-cjk \
             latexmk \
             pandoc
 
@@ -75,17 +77,13 @@ jobs:
       - name: Compile Vietnamese PDF
         working-directory: report
         run: |
-          latexmk -pdf -interaction=nonstopmode main.tex
-          latexmk -pdf -interaction=nonstopmode main.tex
-          latexmk -pdf -interaction=nonstopmode main.tex
+          latexmk -pdf -interaction=nonstopmode -file-line-error main.tex || (cat main.log | tail -n 100 && exit 1)
           cp main.pdf ../report_vn.pdf
 
       - name: Compile English PDF
         working-directory: report
         run: |
-          latexmk -pdf -interaction=nonstopmode main_en.tex
-          latexmk -pdf -interaction=nonstopmode main_en.tex
-          latexmk -pdf -interaction=nonstopmode main_en.tex
+          latexmk -pdf -interaction=nonstopmode -file-line-error main_en.tex || (cat main_en.log | tail -n 100 && exit 1)
           cp main_en.pdf ../report_en.pdf
       
       - name: Package LaTeX source
