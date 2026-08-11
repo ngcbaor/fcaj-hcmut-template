@@ -755,9 +755,6 @@ def compact_longtables(latex):
 
 
 def postprocess_latex(latex):
-    # Do NOT replace Pandoc table column specs by regex.
-    latex = re.sub(r"\\label\{[^}]+\}", "", latex)
-    latex = neutralize_body_headings(latex)
     latex = compact_longtables(latex)
     return latex
 
@@ -777,7 +774,6 @@ def convert_to_latex(md_text, source_path=None):
                     tmp_in,
                     "-f", "markdown+raw_tex+fenced_divs+bracketed_spans",
                     "-t", "latex",
-                    "--top-level-division=section",
                     "--lua-filter", LUA_FILTER,
                     "-o", tmp_out,
                 ],

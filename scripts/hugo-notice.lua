@@ -1,26 +1,41 @@
 function Div(el)
+  local bg = "gray!10"
+  local line = "gray!60"
+  local title = "Note:"
+
   if el.classes:includes("warning") then
-    return {
-      pandoc.RawBlock("latex", "\\begin{mdframed}[backgroundcolor=yellow!20,linecolor=orange!80,linewidth=2pt,roundcorner=5pt]"),
-      pandoc.RawBlock("latex", "\\textbf{\\large ! Note:}"),
-      el,
-      pandoc.RawBlock("latex", "\\end{mdframed}")
-    }
+    bg = "yellow!20"
+    line = "orange!80"
+    title = "! Warning / Note:"
   elseif el.classes:includes("note") then
-    return {
-      pandoc.RawBlock("latex", "\\begin{mdframed}[backgroundcolor=blue!5,linecolor=blue!60,roundcorner=5pt]"),
-      pandoc.RawBlock("latex", "\\textbf{Note:}"),
-      el,
-      pandoc.RawBlock("latex", "\\end{mdframed}")
-    }
+    bg = "blue!5"
+    line = "blue!60"
+    title = "Note:"
   elseif el.classes:includes("info") then
-    return {
-      pandoc.RawBlock("latex", "\\begin{mdframed}[backgroundcolor=green!5,linecolor=green!60,roundcorner=5pt]"),
-      pandoc.RawBlock("latex", "\\textbf{Info:}"),
-      el,
-      pandoc.RawBlock("latex", "\\end{mdframed}")
-    }
+    bg = "green!5"
+    line = "green!60"
+    title = "Info:"
+  else
+    return el
   end
+
+  local result = {
+    pandoc.RawBlock("latex", string.format("\\begin{mdframed}[backgroundcolor=%s,linecolor=%s,linewidth=1.5pt,roundcorner=5pt]\n\\textbf{%s}\\par\\medskip", bg, line, title))
+  }
+  for _, block in ipairs(el.content) do
+    table.insert(result, block)
+  end
+  table.insert(result, pandoc.RawBlock("latex", "\\end{mdframed}"))
+  return result
+end
+
+function Header(el)
+  -- Convert inner body markdown headers to bold paragraphs so Pandoc never emits broken hypertarget/label
+  return pandoc.Para({
+    pandoc.RawInline("latex", "\\vspace{0.6em}\\noindent"),
+    pandoc.Strong(el.content),
+    pandoc.RawInline("latex", "\\par\\smallskip")
+  })
 end
 
 function Table(el)
