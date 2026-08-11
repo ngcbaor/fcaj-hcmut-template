@@ -954,7 +954,9 @@ if __name__ == "__main__":
 
         print("=== Converting Hugo content to LaTeX ===\n")
 
-        for lang in ("en", "vi"):
+        target_langs = sys.argv[1:] if len(sys.argv) > 1 else ["en"]
+
+        for lang in target_langs:
             print(f"-- {lang.upper()} --")
             pages, containers = process_language(lang)
             build_include_file(lang, pages, containers)

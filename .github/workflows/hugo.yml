@@ -51,34 +51,14 @@ jobs:
             texlive-latex-recommended \
             texlive-latex-extra \
             texlive-fonts-recommended \
-            texlive-fonts-extra \
-            texlive-lang-other \
-            texlive-lang-cjk \
             latexmk \
             pandoc
-
-      - name: Verify LaTeX packages
-        run: |
-          echo "=== Checking key packages ==="
-          for pkg in vntex mathptmx fancyhdr mdframed pdfpages float listings; do
-            if kpsewhich ${pkg}.sty > /dev/null 2>&1; then
-              echo "  $pkg: found"
-            else
-              echo "  $pkg: NOT FOUND"
-            fi
-          done
 
       - name: Install Python dependencies
         run: pip install pyyaml
 
       - name: Convert Hugo content to LaTeX
-        run: python3 scripts/convert_hugo_to_latex.py
-
-      - name: Compile Vietnamese PDF
-        working-directory: report
-        run: |
-          latexmk -pdf -interaction=nonstopmode -file-line-error main.tex || (grep -A 8 -B 2 "^!" main.log | head -n 50; exit 1)
-          cp main.pdf ../report_vn.pdf
+        run: python3 scripts/convert_hugo_to_latex.py en
 
       - name: Compile English PDF
         working-directory: report
@@ -101,16 +81,15 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: latest
-          name: "Latest Internship Reports"
+          name: "Latest Internship Report (English)"
           body: |
-            ## Internship Report PDFs
+            ## Internship Report PDF
 
-            Automated PDF generation from Hugo content on push to `main`.
+            Automated English PDF report generated from Hugo content on push to `main`.
 
-            - **Vietnamese**: `report_vn.pdf`
-            - **English**: `report_en.pdf`
+            - **English Report**: `report_en.pdf`
             - **LaTeX source**: `latex_source.zip`
-          artifacts: "report_vn.pdf,report_en.pdf,latex_source.zip"
+          artifacts: "report_en.pdf,latex_source.zip"
           allowUpdates: true
           removeArtifacts: true
           makeLatest: true
