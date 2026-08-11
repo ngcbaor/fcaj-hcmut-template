@@ -549,7 +549,7 @@ def filter_markdown_sections(content, keep_headings):
     return "\n".join(out)
 
 
-def preprocess_markdown(content, meta=None):
+def preprocess_markdown(content, meta=None, lang="vi"):
     meta = meta or {}
 
     report_type = str(meta.get("reportType") or meta.get("report_type") or "").lower()
@@ -671,7 +671,47 @@ def preprocess_markdown(content, meta=None):
     for k, v in unicode_map.items():
         content = content.replace(k, v)
 
+    if lang == "en":
+        content = remove_vietnamese_diacritics(content)
+
     return content
+
+
+VN_DIACRITICS_MAP = {
+    'à':'a','á':'a','ả':'a','ã':'a','ạ':'a',
+    'ă':'a','ằ':'a','ắ':'a','ẳ':'a','ẵ':'a','ặ':'a',
+    'â':'a','ầ':'a','ấ':'a','ẩ':'a','ẫ':'a','ậ':'a',
+    'đ':'d',
+    'è':'e','é':'e','ẻ':'e','ẽ':'e','ẹ':'e',
+    'ê':'e','ề':'e','ế':'e','ể':'e','ễ':'e','ệ':'e',
+    'ì':'i','í':'i','ỉ':'i','ĩ':'i','ị':'i',
+    'ò':'o','ó':'o','ỏ':'o','õ':'o','ọ':'o',
+    'ô':'o','ồ':'o','ố':'o','ổ':'o','ỗ':'o','ộ':'o',
+    'ơ':'o','ờ':'o','ớ':'o','ở':'o','ỡ':'o','ợ':'o',
+    'ù':'u','ú':'u','ủ':'u','ũ':'u','ụ':'u',
+    'ư':'u','ừ':'u','ứ':'u','ử':'u','ữ':'u','ự':'u',
+    'ỳ':'y','ý':'y','ỷ':'y','ỹ':'y','ỵ':'y',
+    'À':'A','Á':'A','Ả':'A','Ã':'A','Ạ':'A',
+    'Ă':'A','Ằ':'A','Ắ':'A','Ẳ':'A','Ẵ':'A','Ặ':'A',
+    'Â':'A','Ầ':'A','Ấ':'A','Ẩ':'A','Ẫ':'A','Ậ':'A',
+    'Đ':'D',
+    'È':'E','É':'E','Ẻ':'E','Ẽ':'E','Ẹ':'E',
+    'Ê':'E','Ề':'E','Ế':'E','Ể':'E','Ễ':'E','Ệ':'E',
+    'Ì':'I','Í':'I','Ỉ':'I','Ĩ':'I','Ị':'I',
+    'Ò':'O','Ó':'O','Ỏ':'O','Õ':'O','Ọ':'O',
+    'Ô':'O','Ồ':'O','Ố':'O','Ổ':'O','Ỗ':'O','Ộ':'O',
+    'Ơ':'O','Ờ':'O','Ớ':'O','Ở':'O','Ỡ':'O','Ợ':'O',
+    'Ù':'U','Ú':'U','Ủ':'U','Ũ':'U','Ụ':'U',
+    'Ư':'U','Ừ':'U','Ứ':'U','Ử':'U','Ữ':'U','Ự':'U',
+    'Ỳ':'Y','Ý':'Y','Ỷ':'Y','Ỹ':'Y','Ỵ':'Y',
+}
+
+def remove_vietnamese_diacritics(text):
+    if not text:
+        return ""
+    for k, v in VN_DIACRITICS_MAP.items():
+        text = text.replace(k, v)
+    return text
 # ---------------------------------------------------------------------------
 # Pandoc LaTeX conversion
 # ---------------------------------------------------------------------------
@@ -865,7 +905,7 @@ def process_language(lang):
         with open(md_path, encoding="utf-8") as f:
             md_content = f.read()
 
-        processed = preprocess_markdown(md_content, meta=meta)
+        processed = preprocess_markdown(md_content, meta=meta, lang=lang)
         latex = convert_to_latex(processed, source_path=md_path)
 
         out_path = os.path.join(lang_dir, f"{out_name}.tex")
@@ -902,6 +942,8 @@ def build_include_file(lang, pages, containers):
     for sec_dir in sorted(sections, key=lambda s: sort_key(s)):
         sec_pages = sections[sec_dir]
         sec_title = titles.get(sec_dir, sec_dir.replace("-", " "))
+        if lang == "en":
+            sec_title = remove_vietnamese_diacritics(sec_title)
 
         lines.append(f"\\subsection{{{sanitize_latex_text(sec_title)}}}")
         lines.append("")
@@ -926,6 +968,8 @@ def build_include_file(lang, pages, containers):
                     if title
                     else sanitize_latex_text(rel_dir.split(os.sep)[-1].replace("-", " "))
                 )
+                if lang == "en":
+                    label = remove_vietnamese_diacritics(label)
 
                 lines.append(f"\\subsubsection{{{label}}}")
                 lines.append(f"\\input{{generated/{lang}/{out_name}}}")

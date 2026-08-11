@@ -1,5 +1,6 @@
 \documentclass[a4paper]{article}
-\usepackage{vntex}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{textcomp}
 \usepackage{mathptmx}
 \usepackage{amssymb,epsfig,latexsym,array,hhline,fancyhdr,calc}
@@ -40,11 +41,10 @@
 \hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true}
 \usepackage{listings}
 \usepackage{fancyvrb}
-\usepackage{framed}
 
 % Pandoc syntax highlighting definitions
 \definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newenvironment{Shaded}{}{}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},fontsize=\small}
 \newcommand{\VerbBar}{|}
 \newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
