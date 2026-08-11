@@ -77,13 +77,13 @@ jobs:
       - name: Compile Vietnamese PDF
         working-directory: report
         run: |
-          latexmk -pdf -interaction=nonstopmode -file-line-error main.tex || (cat main.log | tail -n 100 && exit 1)
+          latexmk -pdf -interaction=nonstopmode -file-line-error main.tex || (grep -A 8 -B 2 "^!" main.log | head -n 50; exit 1)
           cp main.pdf ../report_vn.pdf
 
       - name: Compile English PDF
         working-directory: report
         run: |
-          latexmk -pdf -interaction=nonstopmode -file-line-error main_en.tex || (cat main_en.log | tail -n 100 && exit 1)
+          latexmk -pdf -interaction=nonstopmode -file-line-error main_en.tex || (grep -A 8 -B 2 "^!" main_en.log | head -n 50; exit 1)
           cp main_en.pdf ../report_en.pdf
       
       - name: Package LaTeX source

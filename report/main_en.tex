@@ -20,10 +20,12 @@
 \usepackage{lastpage}
 \usepackage{enumerate}
 \usepackage{graphicx}
-\let\oldincludegraphics\includegraphics
-\renewcommand{\includegraphics}[2][]{%
-  \oldincludegraphics[width=\textwidth,keepaspectratio,#1]{#2}%
-}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
 \usepackage{pdfpages}
 \usepackage{float}
 \usepackage{tabularx}
@@ -77,6 +79,7 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}%
 }
+\providecommand{\passthrough}[1]{#1}
 
 \IfFileExists{grffile.sty}{\usepackage{grffile}}{}
 
